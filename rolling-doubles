@@ -1,3 +1,5 @@
+# This is my attempt at coding the dice-rolling component of the Monopoly board game. I'm trying to teach myself Python, and I thought this would be a good challenge...and so far it is...kicking my butt. Right now I'm having an issue with the if statement when rolling a double. More specifically, when a double is rolled, it's expected that the player that rolled the double to roll again. But when the dice are rolled again, it's by the next player who essentially steals the previous player's turn.
+
 import random
 
 players = ["PLAYER ONE", "PLAYER TWO", "PLAYER THREE", "PLAYER FOUR"]
