@@ -1,0 +1,30 @@
+import random
+
+players = ["PLAYER ONE", "PLAYER TWO", "PLAYER THREE", "PLAYER FOUR"]
+doubles = []
+
+while True:
+	for player in players:
+        roll_dice = input("Roll? ")  # Asks user for input.
+        dice_one = random.randint(1, 6)  # Randomizes the number "rolled" between 1 and 6.
+        dice_two = random.randint(1, 6)  # Randomizes the number "rolled" between 1 and 6.
+        roll_sum = dice_one + dice_two  # Adds the values of dice_one and dice_two.
+        doubles_rolled = doubles.__len__() + 1  # When printed, shows the starting value as 1 not 0.
+        doubles.append(1)  # Appends 1 to the list's number of values.
+
+        if dice_one == dice_two and doubles.__len__() < 3:  # Runs if dice_one and dice_two match and if doubles is less than 3.
+            print("\nDoubles rolled: " + str(doubles_rolled))
+            print("{0} rolled doubles with {1}s. ".format(player, dice_one))
+            print("Move token {0} spaces and roll again. <1>".format(roll_sum))
+
+        elif doubles.__len__() == 3:  # Runs if the length of doubles gets to 3.
+            print("\nDoubles rolled: " + str(doubles_rolled))
+            print("{0} has rolled [{1}s] doubles 3 times in a row and must now go to jail. ".format(player, dice_one))
+            print("Do NOT pass GO. Do NOT collect $200! It's the next player's turn. <2>")
+            doubles.clear()  # Clears the contents of the doubles list.
+
+        else:  # For when the player doesn't roll a double.
+            print("\n{0} rolled a {1} and {2}. ".format(player, dice_one, dice_two))
+            print("Move token {0} spaces. ".format(roll_sum))
+            print("It's the next player's turn. <3>")
+            doubles.clear()  # Clears the contents of the doubles list.
